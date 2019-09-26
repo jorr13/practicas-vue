@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curso vue</title>
+</head>
+<body>
+<div id="app">
+<h1>{{titulo}}</h1>
+<input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
+
+<button @click="agregarFruta">dale click a ver</button>
+<ul>
+    <li v-for="fruta of frutas" >
+        <input type="number" v-model.number="fruta.cantidad">
+        <button @click="fruta.cantidad++">+</button>
+        {{fruta.nombre}}
+        <span v-if="fruta.cantidad == 0">- no hay</span>
+        <span v-if="fruta.cantidad > 0">- si hay</span>
+    </li>
+</ul>
+<h4>TOTAL : {{sumarFrutas}}</h4>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
