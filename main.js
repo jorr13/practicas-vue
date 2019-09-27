@@ -8,7 +8,9 @@ const app = new Vue({
             {nombre :'cambur', cantidad:0},
         ],
         nuevaFruta:'',
-        total :0
+        total :0,
+        fondo: 'bg-danger',
+        color: false,
     },
     methods:{
         agregarFruta(){
